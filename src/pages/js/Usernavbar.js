@@ -175,7 +175,7 @@ export default function Navbar() {
 
                 <li className="moto-menu-item">
                   {" "}
-                  <a href="/user">User</a>{" "}
+                  <a onClick={()=>{localStorage.removeItem('themeidsend');localStorage.removeItem("themeid")}} href="/user">User</a>{" "}
                 </li>
                 <li className="moto-menu-item">
                   <a href="/teacher">Teacher</a>
