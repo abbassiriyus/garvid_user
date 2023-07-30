@@ -24,7 +24,7 @@ export default function Mentor() {
     setState1(
       localStorage.getItem("lang") ? localStorage.getItem("lang") : "en"
     );},[]);
-
+    
 
     function userimgModal(){
         document.querySelector(".user_img_hover").style="  position: absolute;bottom: 0;"
@@ -85,7 +85,7 @@ export default function Mentor() {
         </div>
         </div>
            <div className="blok_bir_text_mentor1">
-            <h1>Muhammad Dzhumaev</h1>
+            <h1>Muhammad Dzhumaev1</h1>
             <p>Java Tutor, Python</p>
             <button>Mentor</button>
            </div>

@@ -21,10 +21,18 @@ export default function Searchfilter() {
   const [kursdata, setKursdata] = useState([]);
   const [type, settype] = useState([]);
   const [state1, setState1] = React.useState();
-  const [loader,setLoader] = useState(0)
+  const [loader,setLoader] = useState(1)
 
   function Filter() {
-    document.querySelector(".filter_button").classList.toggle("filter");
+    var a=document.querySelector(".filter_button").style.display
+    if (a==="none") {
+      document.querySelector(".filter_button").style="display:block "
+    }else{
+      document.querySelector(".filter_button").style="display:none "
+    }
+  }
+  function filter1() {
+    document.querySelector(".filter_button").style="display:none !important"
   }
   function windowModal() {
     document.querySelector(".kurs_cards").style = "display:flex;transition:3s";
@@ -37,6 +45,7 @@ export default function Searchfilter() {
   // }
 
   useEffect(() => {
+    document.querySelector(".filter_button").style="display:none"
     axios
       .get(`${url}/course/main/`, { headers: { "Accept-Language": localStorage.getItem("lang") ? localStorage.getItem("lang") : "en" } })
       .then((res) => {
@@ -100,7 +109,7 @@ export default function Searchfilter() {
                   <TfiMenuAlt className="manu" onClick={() => menuModal()} />
                 </div> */}
               </div>
-              <div className="filter_button">
+              <div onMouseLeave={()=>filter1()}  className="filter_button">
 
 
                       {type.map((item2) => {
@@ -239,7 +248,7 @@ export default function Searchfilter() {
                   <TfiMenuAlt className="manu" onClick={() => menuModal()} />
                 </div> */}
               </div>
-              <div className="filter_button">
+              <div onMouseLeave={()=>filter1()} className="filter_button">
                       {type.map((item2) => {
                           return (
                             <div className="button_filter_kurs">
